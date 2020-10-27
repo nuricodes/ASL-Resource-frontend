@@ -1,5 +1,5 @@
 import React from "react";
-import "../../src/App.css";
+import "../App.css";
 import { Route, Link, Switch } from "react-router-dom";
 import Display from "./Display";
 import Form from "./Form";
@@ -81,7 +81,7 @@ const deleteWord = (word) => {
       <h1>ASL Pocket Reference</h1>
       <hr />
       <Link to="/create">
-        <button>Add Word</button>
+        <button>Add a Word/Phrase</button>
       </Link>
       <main>
         <Switch>
