@@ -79,6 +79,7 @@ const deleteWord = (word) => {
   return (
     <div className="App">
       <h1>ASL Pocket Reference</h1>
+    
       <hr />
       <Link to="/create">
         <button>Add a Word/Phrase</button>
