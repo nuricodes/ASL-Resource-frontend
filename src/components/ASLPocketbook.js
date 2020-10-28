@@ -3,22 +3,23 @@ import "../App.css";
 import { Route, Link, Switch } from "react-router-dom";
 import Display from "./Display";
 import Form from "./Form";
+import Videos from "./Videos";
 import './ASLPocketbook.css'
 
 function ASLPocketbook() {
 
   //Variable to hold url
-  const url = "http://localhost:5000"
+  const url = "http://localhost:5000";
   //State to Hold Words
-  const [words, setWords] = React.useState([])
+  const [words, setWords] = React.useState([]);
 
   //Empty Word
   const emptyWord = {
     name: "",
     age: 0,
-    img: ""
-  }
-  const [selectedWord, setSelectedWord] = React.useState(emptyWord)
+    img: "",
+  };
+  const [selectedWord, setSelectedWord] = React.useState(emptyWord);
 
   //Function to get words via API
   const getWords = () => {
@@ -41,11 +42,11 @@ function ASLPocketbook() {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(newWord)
-    }).then(response => {
-      getWords()
-    })
-  }
+      body: JSON.stringify(newWord),
+    }).then((response) => {
+      getWords();
+    });
+  };
 
   //handleUpdate function for updating words
   const handleUpdate = (word) => {
@@ -81,25 +82,49 @@ function ASLPocketbook() {
     <div className="ASLPocketbook">
       <h1>ASL Pocket Reference</h1>
       <hr />
-      <Link to="/create">
-        <button>Add a Word/Phrase</button>
-      </Link>
+
       <main>
         <Switch>
-          <Route exact path="/" render={(rp) => <Display selectWord={selectWord} deleteWord={deleteWord} {...rp} words={words} />} />
+          <Route
+            exact
+            path="/"
+            render={(rp) => (
+              <Display
+                selectWord={selectWord}
+                deleteWord={deleteWord}
+                {...rp}
+                words={words}
+              />
+            )}
+          />
           <Route
             exact
             path="/create"
             render={(rp) => (
-              <Form {...rp} label="create" word={{}} handleSubmit={handleCreate} />
+              <Form
+                {...rp}
+                label="create"
+                word={{}}
+                handleSubmit={handleCreate}
+              />
             )}
           />
           <Route
             exact
             path="/edit"
             render={(rp) => (
-              <Form {...rp} label="update" word={selectedWord} handleSubmit={handleUpdate} />
+              <Form
+                {...rp}
+                label="update"
+                word={selectedWord}
+                handleSubmit={handleUpdate}
+              />
             )}
+          />
+          <Route
+            exact
+            path="/videos"
+            render={(rp) => <Videos {...rp} word={selectedWord} />}
           />
         </Switch>
       </main>
