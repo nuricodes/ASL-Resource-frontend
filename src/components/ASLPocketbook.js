@@ -4,8 +4,10 @@ import { Route, Link, Switch } from "react-router-dom";
 import Display from "./Display";
 import Form from "./Form";
 import Videos from "./Videos";
+import './ASLPocketbook.css'
 
-function App() {
+function ASLPocketbook() {
+
   //Variable to hold url
   const url = "http://localhost:5000";
   //State to Hold Words
@@ -22,23 +24,23 @@ function App() {
   //Function to get words via API
   const getWords = () => {
     fetch(url + "/word")
-      .then((response) => response.json())
-      .then((data) => {
-        setWords(data);
-      });
-  };
+      .then(response => response.json())
+      .then(data => {
+        setWords(data)
+      })
+  }
 
   //useEffect to do initial call of getWords
   React.useEffect(() => {
-    getWords();
-  }, []);
+    getWords()
+  }, [])
 
   //handle create to create words
   const handleCreate = (newWord) => {
     fetch(url + "/word", {
       method: "post",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(newWord),
     }).then((response) => {
@@ -77,7 +79,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="ASLPocketbook">
       <h1>ASL Pocket Reference</h1>
       <hr />
 
@@ -130,4 +132,4 @@ function App() {
   );
 }
 
-export default App;
+export default ASLPocketbook;
