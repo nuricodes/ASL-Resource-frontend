@@ -2,7 +2,7 @@
   "name": "merced-simple-react-template",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "watch": "webpack --watch",
     "dev": "cross-env PORT=4000 webpack-dev-server --open",
