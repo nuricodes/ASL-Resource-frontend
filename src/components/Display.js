@@ -20,6 +20,7 @@ const Display = (props) => {
         <Link to="/create">
           <button>Add a Word/Phrase</button>
         </Link>
+
         <br></br>
         <label>Search library: </label>
         <input type="text" value={state.search} onChange={updateSearch}></input>
