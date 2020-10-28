@@ -3,8 +3,9 @@ import "../App.css";
 import { Route, Link, Switch } from "react-router-dom";
 import Display from "./Display";
 import Form from "./Form";
+import './ASLPocketbook.css'
 
-function App() {
+function ASLPocketbook() {
 
   //Variable to hold url
   const url = "http://localhost:5000"
@@ -22,14 +23,14 @@ function App() {
   //Function to get words via API
   const getWords = () => {
     fetch(url + "/word")
-    .then(response => response.json())
-    .then(data => {
-      setWords(data)
-    })
+      .then(response => response.json())
+      .then(data => {
+        setWords(data)
+      })
   }
 
   //useEffect to do initial call of getWords
-  React.useEffect(()=>{
+  React.useEffect(() => {
     getWords()
   }, [])
 
@@ -38,7 +39,7 @@ function App() {
     fetch(url + "/word", {
       method: "post",
       headers: {
-        "Content-Type":"application/json"
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(newWord)
     }).then(response => {
@@ -46,38 +47,38 @@ function App() {
     })
   }
 
-//handleUpdate function for updating words
-const handleUpdate = (word) => {
-  fetch(url + "/word/" + word._id, {
-    method: "put",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(word),
-  }).then(() => {
-    // don't need the response from the post but will be using the .then to update the list of words
-    getWords();
-  });
-};
+  //handleUpdate function for updating words
+  const handleUpdate = (word) => {
+    fetch(url + "/word/" + word._id, {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(word),
+    }).then(() => {
+      // don't need the response from the post but will be using the .then to update the list of words
+      getWords();
+    });
+  };
 
-const selectWord = (word) => {
-  setSelectedWord(word);
-};
+  const selectWord = (word) => {
+    setSelectedWord(word);
+  };
 
-const deleteWord = (word) => {
-  fetch(url + "/word/" + word._id, {
-    method: "delete",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then(() => {
-    // don't need the response from the post but will be using the .then to update the list of words
-    getWords();
-  });
-};
+  const deleteWord = (word) => {
+    fetch(url + "/word/" + word._id, {
+      method: "delete",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then(() => {
+      // don't need the response from the post but will be using the .then to update the list of words
+      getWords();
+    });
+  };
 
   return (
-    <div className="App">
+    <div className="ASLPocketbook">
       <h1>ASL Pocket Reference</h1>
       <hr />
       <Link to="/create">
@@ -106,4 +107,4 @@ const deleteWord = (word) => {
   );
 }
 
-export default App;
+export default ASLPocketbook;
