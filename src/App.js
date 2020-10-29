@@ -5,6 +5,7 @@ import "./App.css";
 import Home from './components/pages/Home'
 import Signup from './components/pages/Join/Signup'
 import Discover from './components/pages/Discover'
+import LearningPaths from './components/pages/LearningPaths/LearningPaths'
 
 function App() {
     return (

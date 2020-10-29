@@ -24,15 +24,21 @@ export const Button = ({
     const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0]
 
     return (
-        <Link to='/signup' className='btn-mobile'>
-            <button
-                className={`btn${checkButtonStyle} ${checkButtonSize}`}
-                onClick={onClick}
-                type={type}
-            >
-                {/* renders/displays whatever you put inside of the button */}
-                {children}
-            </button>
-        </Link>
+        <>
+            <Link to='/signup' className='btn-mobile'>
+
+                <button
+                    className={`btn${checkButtonStyle} ${checkButtonSize}`}
+                    onClick={onClick}
+                    type={type}
+                >
+                    {/* renders/displays whatever you put inside of the button */}
+                    {children}
+                </button>
+            </Link>
+
+
+
+        </>
     )
 }
