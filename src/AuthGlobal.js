@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import Header from './Header.js'
+import Header from './Header'
 import {Route, link, switch} from 'react-router-dom'
 
 export const GlobalCtx = React.createContext(null)
@@ -8,7 +8,7 @@ export const GlobalCtx = React.createContext(null)
 const Global = () => { 
     const [gState, gStateSet] = React.useState({url: "http://localhost:3000"})
     return(
-        <GlobalCtx.Provider value={(gState, setGState)}>
+        <GlobalCtx.Provider value={(gState, gStateSet)}>
         <div>
         <Header />
             <main>
