@@ -7,7 +7,6 @@ export const GlobalCtx = React.createContext(null)
 
 const Global = () => { 
     const [gState, gStateSet] = React.useState({url: "http://localhost:3000"})
-
     return(
         <GlobalCtx.Provider value={(gState, setGState)}>
         <div>
