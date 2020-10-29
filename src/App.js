@@ -5,6 +5,9 @@ import "./App.css";
 import Home from './components/pages/Home'
 import Signup from './components/pages/Join/Signup'
 import Discover from './components/pages/Discover'
+
+import LearningPaths from './components/pages/LearningPaths/LearningPaths'
+
 import Display from './components/Display'
 import Form from './components/Form'
 import Videos from './components/Videos'
