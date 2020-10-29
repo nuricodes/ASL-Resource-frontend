@@ -17,7 +17,7 @@ const Display = (props) => {
     });
     return (
       <>
-        <Link to="/create">
+        <Link to="/profile/learningpath/create">
           <button>Add a Word/Phrase</button>
         </Link>
 
@@ -30,7 +30,7 @@ const Display = (props) => {
               <div
                 onClick={() => {
                   props.selectWord(word);
-                  props.history.push("/videos");
+                  props.history.push("profile/learningpath/videos");
                 }}
               >
                 <h1>{word.word}</h1>
@@ -40,7 +40,7 @@ const Display = (props) => {
               <button
                 onClick={() => {
                   props.selectWord(word);
-                  props.history.push("/edit");
+                  props.history.push("profile/learningpath/edit");
                 }}
               >
                 Edit
