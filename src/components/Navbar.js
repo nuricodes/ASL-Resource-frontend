@@ -52,6 +52,15 @@ function Navbar() {
               >
                 Discover
               </Link>
+
+              <Link
+                to="/testauth"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                TestAuth
+              </Link>
+
             </li>
             <li className="nav-item">
               <Link
@@ -61,6 +70,9 @@ function Navbar() {
               >
                 Join
               </Link>
+              
+              
+
             </li>
           </ul>
           {button && <Button buttonStyle="btn--outline">Join</Button>}
