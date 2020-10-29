@@ -8,7 +8,7 @@ export const GlobalCtx = React.createContext(null)
 const  [gState, setGState] = React.useState({})
 
 
-const AuthForm = () => {
+const Global = () => {
     return(
         <GlobalCtx.Provider value={(gState, setGState)}>
         <div>
@@ -18,6 +18,6 @@ const AuthForm = () => {
     )
 }
 
-export default AuthForm
+export default Global
 
 
