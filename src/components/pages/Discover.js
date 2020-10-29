@@ -1,9 +1,10 @@
 import React from 'react'
+import ASLPocketbook from '../../components/ASLPocketbook'
 
 function Discover() {
     return (
         <div>
-            <h1>Hello world</h1>
+            <ASLPocketbook/>
         </div>
     )
 }

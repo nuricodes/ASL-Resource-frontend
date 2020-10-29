@@ -87,7 +87,7 @@ function ASLPocketbook() {
         <Switch>
           <Route
             exact
-            path="/"
+            path="/discover"
             render={(rp) => (
               <Display
                 selectWord={selectWord}
