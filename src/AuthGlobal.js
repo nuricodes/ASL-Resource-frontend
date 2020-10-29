@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import Header from './Header.js'
-import {Route, Link, Switch} from 'react-router-dom'
+import {Route, link, switch} from 'react-router-dom'
 
 export const GlobalCtx = React.createContext(null)
 
