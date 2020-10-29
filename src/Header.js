@@ -1,7 +1,8 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const Header = (props) => {
-    return 
+    return (
     <nav>
         <Link to='/signup'>
         </Link>
@@ -9,6 +10,7 @@ const Header = (props) => {
         <Link to='/login'>
         </Link>
     </nav>
+    )
 }
 
-default export Header
+export default Header
