@@ -2,7 +2,7 @@
   "name": "merced-simple-react-template",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "watch": "webpack --watch",
     "dev": "cross-env PORT=4000 webpack-dev-server --open",
@@ -29,10 +29,12 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "bootstrap": "^4.5.3",
     "cross-env": "^7.0.2",
     "react": "^16.14.0",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.14.0",
     "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "react-twitter-widgets": "^1.9.5"
   }
 }
