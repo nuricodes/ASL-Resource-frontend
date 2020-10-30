@@ -1,0 +1,61 @@
+
+.Pocketbook {
+    /* height: 30rem;
+    width: 25rem;
+    padding: 3rem;
+    margin: 2rem;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    border: none; */
+    position: relative;
+    margin: .5rem 0 1rem 0;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.searchform {
+    background: #f4f4f4;
+    background: rgba(244,244,244,.79);
+    border: 1px solid #d3d3d3;
+    left: 50%;
+    padding: 2px 5px;
+    position: absolute;
+    margin: -22px 0 0 -170px;
+    width: 339px;
+    box-shadow:0 4px 9px rgba(0,0,0,.37);
+    -moz-box-shadow:0 4px 9px rgba(0,0,0,.37);
+    -webkit-box-shadow:0 4px 9px rgba(0,0,0,.37);
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px
+    
+}
+.searchform input {
+	background:#fefefe;
+	border: none;
+	font:16px/12px 'HelveticaNeue', Helvetica, Arial, sans-serif;
+	margin-right: 5px;
+	padding: 10px;
+	width: 330px;
+	box-shadow: 0 0 4px rgba(0,0,0,.4) inset, 1px 1px 1px rgb(39, 176, 255, .50);
+       
+	-moz-box-shadow: 0 0 4px rgba(0,0,0,.4) inset, 1px 1px 1px rgba(255,255,255,.75);
+	-webkit-box-shadow: 0 0 4px rgba(0,0,0,.4) inset, 1px 1px 1px rgba(255,255,255,.75);
+  border-radius: 9px;
+  -moz-border-radius: 9px;
+  -webkit-border-radius: 9px
+}
+.searchform :placeholder-shown {
+    font-style: italic;
+    line-height: 15px
+  }
+.button {
+    /* padding: 1em; */
+    position: relative;
+    text-align: center;
+    margin: 12em;
+    background: linear-gradient(
+      90deg,
+      rgb(39, 176, 255) 0%,
+      rgb(0, 232, 236) 100%
+    );
+}
+

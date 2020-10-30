@@ -11,7 +11,8 @@
 .home,
 .services,
 .products,
-.sign-up {
+.sign-up
+.authtest {
   display: flex;
   height: 90vh;
   align-items: center;

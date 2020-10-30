@@ -1,6 +1,3 @@
-import React from "react";
-
-
 let token;
 
 const login = async () => {

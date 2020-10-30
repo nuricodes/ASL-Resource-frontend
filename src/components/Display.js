@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Card from 'react-bootstrap/Card';
+import { Button } from './Button'
+import './Display.css'
 
 const Display = (props) => {
   const { words } = props;
@@ -16,46 +19,58 @@ const Display = (props) => {
       return word.word.toLowerCase().indexOf(state.search.toLowerCase()) !== -1;
     });
     return (
-      <>
-        <Link to="/create">
-          <button>Add a Word/Phrase</button>
+      <div className="container">
+        <Link to="/profile/learningpath/create">
+          <button className="btn" buttonSize="btn--large">+ Add a Word/Phrase</button>
         </Link>
+        <br />
+        <br />
+        <form className="searchform">
+          <input type="text" placeholder="Quick search library" value={state.search} onChange={updateSearch}></input>
+        </form>
+        <br />
 
-        <br></br>
-        <label>Search library: </label>
-        <input type="text" value={state.search} onChange={updateSearch}></input>
+
         <div style={{ textAlign: "center" }}>
           {filteredWords.map((word) => (
-            <article>
-              <div
-                onClick={() => {
-                  props.selectWord(word);
-                  props.history.push("/videos");
-                }}
-              >
-                <h1>{word.word}</h1>
-                <img src={word.img} />
-                <h3>{word.age}</h3>
-              </div>
-              <button
-                onClick={() => {
-                  props.selectWord(word);
-                  props.history.push("/edit");
-                }}
-              >
-                Edit
+            <>
+              <Card className="Pocketbook">
+                <Card.Body>
+                  <div
+                    onClick={() => {
+                      props.selectWord(word);
+                      props.history.push("/profile/learningpath/videos");
+                    }}
+                  >
+                    <Card.Title> <h1><b>{word.word}</b></h1></Card.Title>
+                    <Card.Text><h3>{word.age}</h3></Card.Text>
+                    {/* <Card.Img variant="top" src={word.img} className="card-img" /> */}
+                    <Card.Img variant="top" src={word.img} className="card-img" />
+
+                  </div>
+
+                  <button className="form-input-btn"
+                    onClick={() => {
+                      props.selectWord(word);
+                      props.history.push("/profile/learningpath/edit");
+                    }}
+                  >
+                    Edit
               </button>
-              <button
-                onClick={() => {
-                  props.deleteWord(word);
-                }}
-              >
-                Delete
+                  <button className="form-input-btn"
+                    onClick={() => {
+                      props.deleteWord(word);
+                    }}
+                  >
+                    Delete
               </button>
-            </article>
+                </Card.Body>
+              </Card>
+            </>
           ))}
         </div>
-      </>
+
+      </div>
     );
   };
   const loading = <h1>Loading...</h1>;
