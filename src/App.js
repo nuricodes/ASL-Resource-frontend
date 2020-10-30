@@ -5,6 +5,7 @@ import "./App.css";
 import Home from "./components/pages/Home";
 import Signup from "./components/pages/Join/Signup";
 import Discover from "./components/pages/Discover";
+import Login from "./components/pages/Join/Login"
 
 import LearningPaths from "./components/pages/LearningPaths/LearningPaths";
 
@@ -12,9 +13,25 @@ import Display from "./components/Display";
 import Form from "./components/Form";
 import Videos from "./components/Videos";
 
+export const GlobalCtx = React.createContext(null)
+
+
 function App() {
   //Variable to hold url
   const url = "http://localhost:5000";
+
+  const [gState, setgState] = React.useState({url: "http://localhost:5000", token: null})
+  
+  //SEEING IF ALREADY LOGGED IN
+  React.useEffect(()=>{
+    const token = JSON.parse(window.localStorage.getItem("token"))
+    console.log(token)
+    if (token){
+      setgState({...gState, token: token.token})
+    }
+  }, [])
+  
+  
   //State to Hold Words
   const [words, setWords] = React.useState([]);
 
@@ -84,11 +101,14 @@ function App() {
   };
 
   return (
+    <GlobalCtx.Provider value={{ gState, setgState }}>
     <>
       <Navbar />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/signup" exact component={Signup} />
+        <Route path="/login" exact component={Login} />
+
         <Route
           exact
           path="/profile/learningpath"
@@ -132,6 +152,7 @@ function App() {
         />
       </Switch>
     </>
+    </GlobalCtx.Provider>
   );
 }
 
