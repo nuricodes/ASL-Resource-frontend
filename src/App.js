@@ -45,7 +45,13 @@ function App() {
 
   //Function to get words via API
   const getWords = () => {
-    fetch(url + "/word")
+    fetch(url + "/word", {
+      method: "get",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "bearer" + gState.token
+      }
+    })
       .then((response) => response.json())
       .then((data) => {
         setWords(data);
@@ -63,6 +69,7 @@ function App() {
       method: "post",
       headers: {
         "Content-Type": "application/json",
+        "authorization": `bearer ${gState.token}`
       },
       body: JSON.stringify(newWord),
     }).then((response) => {
@@ -76,6 +83,7 @@ function App() {
       method: "put",
       headers: {
         "Content-Type": "application/json",
+        "authorization": `bearer ${gState.token}`
       },
       body: JSON.stringify(word),
     }).then(() => {
@@ -112,13 +120,13 @@ function App() {
         <Route
           exact
           path="/profile/learningpath"
-          render={(rp) => (
+          render={(rp) => ( gState.token ?
             <Display
               selectWord={selectWord}
               deleteWord={deleteWord}
               {...rp}
               words={words}
-            />
+            /> : <h1>Not Logged In</h1>
           )}
         />
         <Route
