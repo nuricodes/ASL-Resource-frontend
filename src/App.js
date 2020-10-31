@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar";
+import NavbarLogin from "./components/NavbarLogin";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/pages/Home";
@@ -38,7 +39,7 @@ function App() {
   //Empty Word
   const emptyWord = {
     name: "",
-    age: 0,
+    user: "",
     img: "",
   };
   const [selectedWord, setSelectedWord] = React.useState(emptyWord);
@@ -49,7 +50,7 @@ function App() {
       method: "get",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "bearer" + gState.token
+        "Authorization": `bearer ${gState.token}`
       }
     })
       .then((response) => response.json())
@@ -61,7 +62,7 @@ function App() {
   //useEffect to do initial call of getWords
   React.useEffect(() => {
     getWords();
-  }, []);
+  }, [gState.token]);
 
   //handle create to create words
   const handleCreate = (newWord) => {
@@ -101,6 +102,7 @@ function App() {
       method: "delete",
       headers: {
         "Content-Type": "application/json",
+        "authorization": `bearer ${gState.token}`
       },
     }).then(() => {
       // don't need the response from the post but will be using the .then to update the list of words
@@ -108,10 +110,19 @@ function App() {
     });
   };
 
+  const loginCheck = () => {
+    if (gState.token){
+      return <NavbarLogin />
+    } else {
+      return <Navbar />
+    }
+  }
+
+
   return (
     <GlobalCtx.Provider value={{ gState, setgState }}>
     <>
-      <Navbar />
+      {loginCheck()}
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/signup" exact component={Signup} />
@@ -135,7 +146,7 @@ function App() {
           render={(rp) => (
             <Form
               {...rp}
-              label="create"
+              label="Add a Word"
               word={{}}
               handleSubmit={handleCreate}
             />
@@ -147,7 +158,7 @@ function App() {
           render={(rp) => (
             <Form
               {...rp}
-              label="update"
+              label="Update a Word"
               word={selectedWord}
               handleSubmit={handleUpdate}
             />
