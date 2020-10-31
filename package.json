@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "webpack --watch",
     "dev": "cross-env PORT=4000 webpack-dev-server --open",
-    "build": "webpack --env.production"
+    "build": "CI= webpack --env.production"
   },
   "keywords": [],
   "author": "",
