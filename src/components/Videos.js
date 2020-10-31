@@ -1,10 +1,19 @@
 const React = require("react");
+import {GlobalCtx} from "../App"
 
 const Videos = (props) => {
   const [videos, setVideos] = React.useState([]);
+  const {gState, setgState} = React.useContext(GlobalCtx)
+  const {token} = gState
   //fetch call to backend goes here
   const getVideos = () => {
-    fetch("http://localhost:5000/word/show/" + props.word.word)
+    fetch("http://localhost:5000/word/show/" + props.word.word, {
+      method: "get",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `bearer ${token}`
+      }
+      })
       .then((response) => response.json())
       .then((data) => {
         setVideos(data.items);

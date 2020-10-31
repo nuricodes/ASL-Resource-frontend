@@ -19,7 +19,9 @@ const Login = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        const {username, password} = form
+        const { username, password } = form;
+        console.log(username)
+        setgState({ ...gState, user: username });
         fetch(`${url}/auth/login`, {
             method: "post",
             headers: {
@@ -31,7 +33,7 @@ const Login = (props) => {
         .then(data => {
             console.log(data)
             window.localStorage.setItem("token", JSON.stringify(data))
-            setgState({...gState, token: data.token})
+            setgState({...gState, token: data.token, user: username})
             setForm(blank)
             props.history.push("/profile/learningpath")
         })
