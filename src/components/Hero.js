@@ -15,7 +15,6 @@ function Hero() {
             <p>Find the quick links you need to get by</p>
             <div className="hero-btns">
                 <Button className='btns' buttonStyle='btn--outline' buttonSize='btn--large'>SIGN UP TODAY</Button>
-                <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large'>Filtered Search</Button>
             </div>
         </div>
 

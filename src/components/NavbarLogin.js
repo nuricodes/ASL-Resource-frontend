@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { Button } from "./Button";
+import {GlobalCtx} from "../App"
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+  const {gState, setgState} = React.useContext(GlobalCtx)
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -50,35 +52,23 @@ function Navbar() {
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Discover
+                Profile
               </Link>
-              </li>
-              <li className="nav-item">
-              <Link
-              to="/login"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                Login
-              </Link>
-              
-              
 
             </li>
             <li className="nav-item">
               <Link
-              to="/signup"
                 className="nav-links"
-                onClick={closeMobileMenu}
+                onClick={() => {
+                    window.localStorage.removeItem("token")
+                    setgState({...gState, token: null })
+                }}
               >
-                Join
+                Logout
               </Link>
-              
-              
 
             </li>
           </ul>
-        
         </div>
       </nav>
     </>
