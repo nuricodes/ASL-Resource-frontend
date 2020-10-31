@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 import { Button } from './Button'
 import './Display.css'
+import {GlobalCtx} from "../App"
 
 const Display = (props) => {
+  const {gState, setgState} = React.useContext(GlobalCtx)
+  const {token} = gState
   const { words } = props;
   const [state, setState] = React.useState({
     search: "",
@@ -15,6 +18,7 @@ const Display = (props) => {
   };
 
   const loaded = () => {
+    if (words.length > 0){
     let filteredWords = words.filter((word) => {
       return word.word.toLowerCase().indexOf(state.search.toLowerCase()) !== -1;
     });
@@ -72,10 +76,19 @@ const Display = (props) => {
 
       </div>
     );
+                  } else {
+
+                    return (
+                        <Link to="/profile/learningpath/create">
+                          <button className="btn" buttonSize="btn--large">+ Add a Word/Phrase</button>
+                        </Link>
+                        )
+
+                  }
   };
   const loading = <h1>Loading...</h1>;
 
-  return words.length > 0 ? loaded() : loading;
+  return token !== null ? loaded() : loading;
 };
 
 export default Display;
