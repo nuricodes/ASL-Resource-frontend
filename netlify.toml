@@ -1,3 +1,28 @@
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/"
+
+  [[redirects]]
+  from = "/*"
+  to = "/profile/learningpath"
+
+  [[redirects]]
+  from = "/*"
+  to = "/profile/learningpath/create"
+
+  [[redirects]]
+  from = "/*"
+  to = "/profile/learningpath/edit"
+
+  [[redirects]]
+  from = "/*"
+  to = "/profile/learningpath/videos"
+
+
+  [[redirects]]
+  from = "/*"
+  to = "/signup"
+
+  [[redirects]]
+  from = "/*"
+  to = "/login"
