@@ -7,7 +7,7 @@ const Videos = (props) => {
   const {token} = gState
   //fetch call to backend goes here
   const getVideos = () => {
-    fetch("http://localhost:5000/word/show/" + props.word.word, {
+    fetch("https://signsourcebackend.herokuapp.com/word/show/" + props.word.word, {
       method: "get",
       headers: {
         "Content-Type": "application/json",
