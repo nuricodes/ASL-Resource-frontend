@@ -8,6 +8,7 @@ function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
   const {gState, setgState} = React.useContext(GlobalCtx)
+  const {user} = gState
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -26,13 +27,13 @@ function Navbar() {
   }, []);
 
   window.addEventListener("resize", showButton);
+
   return (
     <>
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo">
-            <i class="fas fa-american-sign-language-interpreting">
-              {" "}
+            <i className="fas fa-american-sign-language-interpreting">
               SignSource
             </i>
           </Link>
@@ -61,18 +62,22 @@ function Navbar() {
                 className="nav-links"
                 onClick={() => {
                     window.localStorage.removeItem("token")
-                    setgState({...gState, token: null })
+                    setgState({...gState, token: null, user: null})
                 }}
               >
                 Logout
               </Link>
 
             </li>
+            <li className="nav-item" className="text-light">
+              Welcome {user}
+            </li>
           </ul>
         </div>
       </nav>
     </>
   );
+          
 }
 
 export default Navbar;
