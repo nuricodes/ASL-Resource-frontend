@@ -30,7 +30,6 @@ function Navbar() {
         <div className="navbar-container">
           <Link to="/" className="navbar-logo">
             <i class="fas fa-american-sign-language-interpreting">
-              {" "}
               SignSource
             </i>
           </Link>
@@ -44,15 +43,6 @@ function Navbar() {
                 Home
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                to="/profile/learningpath"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                Discover
-              </Link>
-              </li>
               <li className="nav-item">
               <Link
               to="/login"

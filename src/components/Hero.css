@@ -32,6 +32,7 @@
 
 .hero-btns .btn {
     margin: 6px;
+    border-radius: 10px;
 }
 
 .fa-play-circle {
