@@ -20,15 +20,15 @@ export const GlobalCtx = React.createContext(null)
 function App() {
   //Variable to hold url
   const url = "https://signsourcebackend.herokuapp.com";
-
-  const [gState, setgState] = React.useState({url: "https://signsourcebackend.herokuapp.com", token: null})
-  
+  //const url = "http://localhost:5000";
+  const [gState, setgState] = React.useState({url: "https://signsourcebackend.herokuapp.com", token: null, user: null})
+  //const [gState, setgState] = React.useState({url: "http://localhost:5000", token: null, user: null})
   //SEEING IF ALREADY LOGGED IN
   React.useEffect(()=>{
     const token = JSON.parse(window.localStorage.getItem("token"))
-    console.log(token)
+    //console.log(user)
     if (token){
-      setgState({...gState, token: token.token})
+      setgState({...gState, token: token.token, user: token.username})
     }
   }, [])
   

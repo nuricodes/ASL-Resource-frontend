@@ -22,9 +22,6 @@ const Form = (props) => {
 
   return (
     <div className="form-container">
-      <div className="form-content-left">
-                    
-                </div>
                 <div className="form-content-right">
     <form className="form" onSubmit={handleSubmit}>
                 <h1>{props.label}</h1>
