@@ -9,10 +9,10 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 function Home() {
-    return (
-        <>
-            <Hero />
-            <div className="heading">
+  return (
+    <>
+      <Hero />
+      <div className="heading">
         <img src="https://i.imgur.com/0KsnPLk.png" height="100px" />
         <h1><b>What's the world saying about ASL?</b></h1>
       </div>
@@ -86,8 +86,18 @@ function Home() {
           </Col>
         </Row>
       </Container>
-        </>
-    )
+      <footer class="footer-distributed">
+        <div class="footer-right">
+          <a href="#"><i class="fab fa-facebook-square"></i></a>
+          <a href="#"><i class="fab fa-twitter-square"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-github-square"></i></a>
+        </div>
+        <div class="footer-left">
+          <p>Made with <i class="far fa-heart"></i> <br></br> &copy; 2020</p>
+        </div>
+      </footer>
+    </>
+  )
 }
-
 export default Home;
