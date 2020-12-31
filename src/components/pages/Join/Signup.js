@@ -31,7 +31,6 @@ const Signup = (props) => {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             setForm(blank)
             props.history.push("/login")
         })
@@ -41,10 +40,7 @@ const Signup = (props) => {
 
     return (
         <div className="form-container">
-                <span className="close-btn">x</span>
-                 <div className="form-content-left">
-                    {/* <img src="https://images.unsplash.com/photo-1580893211123-627e0262be3a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="thumbsUp" className="form-img" /> */}
-                </div>
+                
     <div className="form-content-right">
     <form className="form" onSubmit={handleSubmit}>
         <h1>Get started with us today! Create your account by filling out the information below.</h1>

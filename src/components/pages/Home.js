@@ -17,7 +17,7 @@ function Home() {
       </div>
       <Container className="container">
         <Row className="row">
-          <Col className="col-xs-12 col-sm-4">
+          <Col className="tweet">
             <Card className="card">
               <Card.Body>
                 <Card.Header style={{
@@ -39,7 +39,7 @@ function Home() {
               </Card.Body>
             </Card>
           </Col>
-          <Col className="col-xs-12 col-sm-4">
+          <Col className="tweet">
             <Card className="card">
               <Card.Body>
                 <Card.Header style={{
@@ -61,7 +61,7 @@ function Home() {
               </Card.Body>
             </Card>
           </Col>
-          <Col className="col-xs-12 col-sm-4">
+          <Col className="tweet">
             <Card className="card">
               <Card.Body>
                 <Card.Header style={{
