@@ -7,12 +7,11 @@ import './Home.css'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-
 function Home() {
-    return (
-        <>
-            <Hero />
-            <div className="heading">
+  return (
+    <>
+      <Hero />
+      <div className="heading">
         <img src="https://i.imgur.com/0KsnPLk.png" height="100px" />
         <h1><b>What's the world saying about ASL?</b></h1>
       </div>
@@ -86,8 +85,8 @@ function Home() {
           </Col>
         </Row>
       </Container>
-        </>
-    )
-}
 
+    </>
+  )
+}
 export default Home;
