@@ -93,6 +93,7 @@ function Home() {
           <a href="#"><i class="fab fa-github-square"></i></a>
         </div>
         <div class="footer-left">
+
           <p>&copy; 2020</p>
         </div>
       </footer>
@@ -101,3 +102,12 @@ function Home() {
   )
 }
 export default Home;
+
+          <p>Made with <i class="far fa-heart"></i> <br></br> &copy; 2020</p>
+        </div>
+      </footer>
+    </>
+  )
+}
+export default Home;
+
