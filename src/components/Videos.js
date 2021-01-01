@@ -1,5 +1,6 @@
 const React = require("react");
-import { GlobalCtx } from "../App"
+import { GlobalCtx } from "../App";
+import Card from 'react-bootstrap/Card';
 import "./Videos.css";
 
 const Videos = (props) => {
@@ -28,15 +29,14 @@ const Videos = (props) => {
       <h1 className="videos-title">
         These videos might be helpful to learn the word "{props.word.word}":
       </h1>
-      <div>
-        {videos.map((video) => (
-          <iframe
-            width="420"
-            height="315"
-            src={`https://www.youtube.com/embed/${video.id.videoId}`}
-          ></iframe>
-        ))}
-      </div>
+      {videos.map((video) => (
+        <iframe
+          width="420"
+          height="315"
+          className="youtube"
+          src={`https://www.youtube.com/embed/${video.id.videoId}`}
+        ></iframe>
+      ))}
     </>
   );
 };

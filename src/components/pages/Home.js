@@ -54,7 +54,7 @@ function Home() {
                     options={{
                       chrome: 'noheader nofooter',
                       height: '450',
-                      width: '8rem',
+                      width: '12rem',
                     }}
                   />
                 </Card.Text>
