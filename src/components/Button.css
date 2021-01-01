@@ -27,10 +27,18 @@
   .btn--large {
     padding: 12px 26px;
     font-size: 20px;
+    color: white;
+    background: #1762A7;
+    border: none;
+    border-radius: 3%;
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+
+  .btn--large:hover {
+    box-shadow: 0 2px 5px 0 rgb(52,184,253),0 2px 10px 0 rgba(0,0,0,0.12); 
   }
   
   .btn--medium:hover, .btn--large:hover {
-    background: white;
-    color: black;
+    font-size: 1.3em;
     transition: all 0.3s ease-out;
   }

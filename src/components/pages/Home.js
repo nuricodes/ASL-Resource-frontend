@@ -7,7 +7,6 @@ import './Home.css'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-
 function Home() {
   return (
     <>
@@ -18,7 +17,7 @@ function Home() {
       </div>
       <Container className="container">
         <Row className="row">
-          <Col className="col-xs-12 col-sm-4">
+          <Col className="tweet">
             <Card className="card">
               <Card.Body>
                 <Card.Header style={{
@@ -32,7 +31,7 @@ function Home() {
                     }}
                     options={{
                       chrome: 'noheader nofooter',
-                      height: '350',
+                      height: '250',
                       width: '5rem',
                     }}
                   />
@@ -40,8 +39,8 @@ function Home() {
               </Card.Body>
             </Card>
           </Col>
-          <Col className="col-xs-12 col-sm-4">
-            <Card className="card">
+          <Col className="tweet-middle">
+            <Card className="card-middle">
               <Card.Body>
                 <Card.Header style={{
                   color: '#34B8FD'
@@ -55,14 +54,14 @@ function Home() {
                     options={{
                       chrome: 'noheader nofooter',
                       height: '350',
-                      width: '5rem',
+                      width: '8rem',
                     }}
                   />
                 </Card.Text>
               </Card.Body>
             </Card>
           </Col>
-          <Col className="col-xs-12 col-sm-4">
+          <Col className="tweet">
             <Card className="card">
               <Card.Body>
                 <Card.Header style={{
@@ -76,7 +75,7 @@ function Home() {
                     }}
                     options={{
                       chrome: 'noheader nofooter',
-                      height: '350',
+                      height: '250',
                       width: '5rem',
                     }}
                   />
@@ -94,6 +93,16 @@ function Home() {
           <a href="#"><i class="fab fa-github-square"></i></a>
         </div>
         <div class="footer-left">
+
+          <p>&copy; 2020</p>
+        </div>
+      </footer>
+
+    </>
+  )
+}
+export default Home;
+
           <p>Made with <i class="far fa-heart"></i> <br></br> &copy; 2020</p>
         </div>
       </footer>
@@ -101,3 +110,4 @@ function Home() {
   )
 }
 export default Home;
+
