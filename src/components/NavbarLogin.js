@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import { Button } from "./Button";
-import {GlobalCtx} from "../App"
+import { GlobalCtx } from "../App"
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
-  const {gState, setgState} = React.useContext(GlobalCtx)
-  const {user} = gState
+  const { gState, setgState } = React.useContext(GlobalCtx)
+  const { user } = gState
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -61,8 +60,8 @@ function Navbar() {
               <Link
                 className="nav-links"
                 onClick={() => {
-                    window.localStorage.removeItem("token")
-                    setgState({...gState, token: null, user: null})
+                  window.localStorage.removeItem("token")
+                  setgState({ ...gState, token: null, user: null })
                 }}
               >
                 Logout
@@ -77,7 +76,7 @@ function Navbar() {
       </nav>
     </>
   );
-          
+
 }
 
 export default Navbar;

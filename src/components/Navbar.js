@@ -43,32 +43,32 @@ function Navbar() {
                 Home
               </Link>
             </li>
-              <li className="nav-item">
+            <li className="nav-item">
               <Link
-              to="/login"
+                to="/login"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
                 Login
               </Link>
-              
-              
+
+
 
             </li>
             <li className="nav-item">
               <Link
-              to="/signup"
+                to="/signup"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
                 Join
               </Link>
-              
-              
+
+
 
             </li>
           </ul>
-        
+
         </div>
       </nav>
     </>

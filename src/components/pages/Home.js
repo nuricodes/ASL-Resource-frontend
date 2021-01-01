@@ -39,8 +39,8 @@ function Home() {
               </Card.Body>
             </Card>
           </Col>
-          <Col className="tweet">
-            <Card className="card">
+          <Col className="tweet-middle">
+            <Card className="card-middle">
               <Card.Body>
                 <Card.Header style={{
                   color: '#34B8FD'
@@ -53,8 +53,8 @@ function Home() {
                     }}
                     options={{
                       chrome: 'noheader nofooter',
-                      height: '350',
-                      width: '5rem',
+                      height: '450',
+                      width: '8rem',
                     }}
                   />
                 </Card.Text>
@@ -85,6 +85,17 @@ function Home() {
           </Col>
         </Row>
       </Container>
+      <footer class="footer-distributed">
+        <div class="footer-right">
+          <a href="#"><i class="fab fa-facebook-square"></i></a>
+          <a href="#"><i class="fab fa-twitter-square"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-github-square"></i></a>
+        </div>
+        <div class="footer-left">
+          <p>&copy; 2020</p>
+        </div>
+      </footer>
 
     </>
   )
