@@ -31,7 +31,7 @@ function Home() {
                     }}
                     options={{
                       chrome: 'noheader nofooter',
-                      height: '350',
+                      height: '250',
                       width: '5rem',
                     }}
                   />
@@ -53,8 +53,8 @@ function Home() {
                     }}
                     options={{
                       chrome: 'noheader nofooter',
-                      height: '450',
-                      width: '12rem',
+                      height: '350',
+                      width: '8rem',
                     }}
                   />
                 </Card.Text>
@@ -75,7 +75,7 @@ function Home() {
                     }}
                     options={{
                       chrome: 'noheader nofooter',
-                      height: '350',
+                      height: '250',
                       width: '5rem',
                     }}
                   />
